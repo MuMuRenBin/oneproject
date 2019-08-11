@@ -1,5 +1,6 @@
 
 let path = require('path')
+let webpack = require('webpack')
 
 //在内存中根据指定的末班页面，生成一份内存中的首页，同时自动把打包好的bundle注入到页面底部
 //如果要配置插件，需要在导出的对象中，挂载一个plugin节点
@@ -19,6 +20,10 @@ module.exports = {
             filename:'index.html'//设置生成的内存页面的名称
         }),
         new VueLoaderPlugin(),
+        new webpack.ProvidePlugin({
+            $:"jquery",
+            JQuery:"jquery"
+        })
     ],
     module:{//配置所有第三方loader模块的
         rules:[//第三方模块的匹配规则
