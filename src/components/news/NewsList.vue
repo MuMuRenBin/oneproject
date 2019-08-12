@@ -28,6 +28,8 @@
 </template>
 
 <script>
+//引入axios
+import axios from 'axios'
 import {Toast} from "mint-ui";
 import $ from 'jquery'
 export default {
@@ -51,22 +53,14 @@ export default {
                     Toast("新闻数据获取失败！")
                 }
             })
-            // var self = this;
-            // $.ajax({
-            //     url:'http://v.juhe.cn/toutiao/index',
-            //     type:'GET',
-            //     dataType:'jsonp',
-            //     data:{
-            //         type:'top',
-            //         key:'26c82b3adfbc3511740c550242e00c56'
-            //     },
-            //     success: function(res) {
-            //         self.newsList = res.result.data
-            //         console.log(res)
-            //     },
-            //     error:function(d,textStatus, errorThrown){
-            //         Toast('新闻数据请求失败了')
-            //         console.log(d.status,d.readyState,d.responseText,textStatus, errorThrown)
+            // axios("https://way.jd.com/jisuapi/get?channel=头条&num=10&start=0&appkey=ec353f8750c86a0b16d4b477b7baa457")
+            // .then(res=>{console.log(res);
+            //     if (res.body.Body.code===10000) {
+            //         console.log(this)
+            //         this.newsList=res.body.result.data;
+            //         Toast("请求数据成功！")
+            //     }else{
+            //         Toast("新闻数据获取失败！")
             //     }
             // })
         }

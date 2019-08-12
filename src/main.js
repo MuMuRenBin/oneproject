@@ -1,6 +1,11 @@
 //这是入口文件
 import Vue from 'vue';
 
+//引入axios
+// import axios from 'axios'
+//将 axios 改写为 Vue 的原型属性
+// Vue.prototype.$axios=axios
+
 import VueJsonp from 'vue-jsonp'
 Vue.use(VueJsonp)
 

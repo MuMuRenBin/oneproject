@@ -8,7 +8,25 @@ let htmlWebpackPlugin = require('html-webpack-plugin')
 
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
 
+// webpack.config.js
+//...
+// const proxy = require('http-proxy-middleware');
+
+
 module.exports = {
+    // devServer:{
+    //     host: '127.0.0.1',
+    //     port: 3000,  //启动该项目的端口号
+    //     proxy:{
+    //         '/api':{
+    //             target: 'https://24bp.cn/p.php',
+    //             changeOrigin: true,
+    //             pathRewrite: {
+    //                 '^/api': '/'
+    //             }
+    //         }
+    //     }
+    // },
     entry: path.join(__dirname,'./src/main.js'),//入口文件
     output:{
         path:path.join(__dirname,'./dist'),//输出路径
